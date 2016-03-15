@@ -1,7 +1,8 @@
 {
-  "iso_url": "/Users/lukaszr/Downloads/CentOS-7-x86_64-Minimal-1511.iso",
+  "iso_url": "http://mirror.met.hu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
   "iso_checksum": "f90e4d28fa377669b2db16cbcb451fcb9a89d2460e3645993e30e137ac37d284",
   "iso_checksum_type": "sha256",
-  "guest_additions_path": "VBoxGuestAdditions.iso",
+  "guest_additions_url": "http://download.virtualbox.org/virtualbox/4.3.36/VBoxGuestAdditions_4.3.36.iso",
+  "guest_additions_sha256": "adba31edc86b4043d5d9a1700f2adf9806220125549cd83fc010e1f2770f0b79",
   "redhat_release": "7.2"
 }

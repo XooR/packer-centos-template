@@ -22,7 +22,12 @@ skipx
 logging --level=info
 zerombr
 clearpart --all --initlabel
-autopart
+part /boot --size=1024 --ondisk sda
+part pv.01 --size=1    --ondisk sda --grow
+volgroup vg1 pv.01
+logvol /    --vgname=vg1 --size=150000  --name=root
+logvol swap --vgname=vg1 --recommended --name=swap --fstype=swap
+ignoredisk --only-use=sda
 
 reboot
 

@@ -4,8 +4,9 @@
       "iso_url": "",
       "iso_checksum": "",
       "iso_checksum_type": "",
-      "guest_additions_path": "",
-      "redhat_release": "6.7"
+      "redhat_release": "6.7",
+      "guest_additions_url": "",
+      "guest_additions_sha256": ""
     },
 
   "builders": [
@@ -13,14 +14,17 @@
       "type": "virtualbox-iso",
       "vm_name": "centos-vm",
       "boot_wait": "10s",
-      "disk_size": 10000,
+      "disk_size": 200000,
       "guest_os_type": "RedHat_64",
       "http_directory": "http",
 
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
-      "guest_additions_path": "{{user `guest_additions_path`}}",
+      "guest_additions_url": "{{user `guest_additions_url`}}",
+      "guest_additions_sha256": "{{user `guest_additions_sha256`}}",
+
+      "guest_additions_path": "VBoxGuestAdditions.iso",
 
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/vagrant.ks<enter><wait>"
@@ -59,8 +63,7 @@
             "scripts/base.sh",
             "scripts/vagrant.sh",
             "scripts/virtualbox.sh",
-            "scripts/cleanup.sh",
-            "scripts/puppet.sh"
+            "scripts/cleanup.sh"
           ]
         }
       }
